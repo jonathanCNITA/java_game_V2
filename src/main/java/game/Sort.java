@@ -7,28 +7,28 @@ public class Sort
 
     public Sort(){}
 
-    public Sort(String name, int power) 
+    public Sort(String name, int power)
     {
         this.name = name;
         this.power = power;
     }
     
-    public String getName() 
+    public String getName()
     {
         return this.name;
     }
 
-    public void setName(String name) 
+    public void setName(String name)
     {
         this.name = name;
     }
 
-    public int getPower() 
+    public int getPower()
     {
         return this.power;
     }
 
-    public void setPower(int power) 
+    public void setPower(int power)
     {
         this.power = power;
     }

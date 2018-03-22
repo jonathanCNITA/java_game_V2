@@ -10,6 +10,13 @@ public class Magician extends Personnage {
     public Magician(String name) {
         this.setName(name);
     }
+
+    public Magician(String name, String url, int life, int attack) {
+        this.setName(name);
+        this.setImg(url);
+        this.setLife(life);
+        this.setAttack(attack);
+    }
     
     public Magician(String name, String url, int life, int attack, Sort sort) {
         this.setName(name);
