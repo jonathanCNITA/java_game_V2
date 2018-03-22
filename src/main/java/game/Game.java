@@ -19,14 +19,15 @@ public class Game {
         generateArmes();
         generateSort();
 
-        while (playGame) {
+        while (playGame) 
+        {
             userChoice = (selectOption());
             if (userChoice == 0) 
             {
                 System.out.println("A bientot");
                 playGame = false;
             }
-            if (userChoice == 1)
+            else if (userChoice == 1)
             {
                 creerUnPersonnage();
             } 
@@ -59,6 +60,7 @@ public class Game {
 
     //-- Functions --\\
 
+    //-- Show menus --\\
     private static int selectOption() {
         System.out.println("Choisissez une options:\n0 - Quitter le jeu\n1 - Creer un personnage\n2 - Lister les personnages\n3 - Editer un personnage\n4 - Creer une arme\n5 - Creer un Sort\n6 - Lister les armes\n7 - lister les sorts");
         return scannerInputInt.nextInt();
@@ -69,7 +71,7 @@ public class Game {
         return scannerInputInt.nextInt();
     }
 
-
+    //-- Functions --\\
     private static void creerUnPersonnage()
     {
         int life, attack, type = 0;
@@ -94,6 +96,7 @@ public class Game {
         }
     }
 
+
     private static void listerLesElements(ArrayList listOfObject) 
     {
         System.out.println("//////////////////////");
@@ -106,6 +109,7 @@ public class Game {
         }
         System.out.println("//////////////////////");
     }
+
 
     private static void editerUnPersonnage() 
     {
@@ -136,8 +140,7 @@ public class Game {
             } 
             else if (attr == 5) 
             {
-                donnerArmeSort(id);
-                  
+                donnerArmeSort(id); 
             } 
             else 
             {
@@ -145,6 +148,7 @@ public class Game {
             }
         } while (editMode);
     }
+
 
     private static void donnerArmeSort(int id) 
     {
@@ -162,6 +166,7 @@ public class Game {
         }
     }
 
+
     private static void creerUneArme() 
     {
         String name;
@@ -170,9 +175,9 @@ public class Game {
         name = scannerInputStr.nextLine();
         System.out.println("Quel la puissance de " + name);
         power = scannerInputInt.nextInt();
-        Weapon w = new Weapon(name, power);
-        armes.add(w);
+        armes.add(new Weapon(name, power));
     }
+
 
     private static void creerUnSort() 
     {
@@ -182,33 +187,22 @@ public class Game {
         name = scannerInputStr.nextLine();
         System.out.println("Quel la puissance de " + name);
         power = scannerInputInt.nextInt();
-        Sort s = new Sort(name, power);
-        sorts.add(s);
+        sorts.add(new Sort(name, power));
     }
+
 
     private static void generateArmes() 
     {
-        String name;
-        int power;
-        Weapon w;
-        w = new Weapon("couteau", 5);
-        armes.add(w);
-        w = new Weapon("épée", 10);
-        armes.add(w);
-        w = new Weapon("pistolet", 18);
-        armes.add(w);
+        armes.add(new Weapon("couteau", 5));
+        armes.add(new Weapon("épée", 10));
+        armes.add(new Weapon("pistolet", 18));
     }
+
 
     private static void generateSort() 
     {
-        String name;
-        int power;
-        Sort s;
-        s = new Sort("InstantDeath", 5);
-        sorts.add(s);
-        s = new Sort("ParalizeAuto", 10);
-        sorts.add(s);
-        s = new Sort("Eclair de feu", 18);
-        sorts.add(s);
+        sorts.add(new Sort("InstantDeath", 5));
+        sorts.add(new Sort("ParalizeAuto", 10));
+        sorts.add(new Sort("Eclair de feu", 18));
     }
 }
