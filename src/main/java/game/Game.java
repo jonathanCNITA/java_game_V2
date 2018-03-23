@@ -56,6 +56,10 @@ public class Game {
             {
                 listerLesElements(sorts);
             }
+            else if (userChoice == 8) 
+            {
+                supprimerUnElement(players);
+            }
         }
     }
 
@@ -63,7 +67,7 @@ public class Game {
 
     //-- Menus --\\
     private static int selectOption() {
-        System.out.println("Choisissez une options:\n0 - Quitter le jeu\n1 - Creer un personnage\n2 - Lister les personnages\n3 - Editer un personnage\n4 - Creer une arme\n5 - Creer un Sort\n6 - Lister les armes\n7 - lister les sorts");
+        System.out.println("Choisissez une options:\n0 - Quitter le jeu\n1 - Creer un personnage\n2 - Lister les personnages\n3 - Editer un personnage\n4 - Creer une arme\n5 - Creer un Sort\n6 - Lister les armes\n7 - lister les sorts\n8 - Supprimer un personnage");
         return scannerInputInt.nextInt();
     }
 
@@ -148,6 +152,15 @@ public class Game {
                 editMode = false;
             }
         } while (editMode);
+    }
+
+    private static void supprimerUnElement(ArrayList list) 
+    {
+        int id;
+
+        System.out.println("Donnez l'index à supprimer:");
+        id = scannerInputInt.nextInt();
+        list.remove(id);
     }
 
     /** 
