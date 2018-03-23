@@ -61,7 +61,7 @@ public class Game {
 
     //-- Functions --\\
 
-    //-- Show menus --\\
+    //-- Menus --\\
     private static int selectOption() {
         System.out.println("Choisissez une options:\n0 - Quitter le jeu\n1 - Creer un personnage\n2 - Lister les personnages\n3 - Editer un personnage\n4 - Creer une arme\n5 - Creer un Sort\n6 - Lister les armes\n7 - lister les sorts");
         return scannerInputInt.nextInt();
@@ -72,7 +72,7 @@ public class Game {
         return scannerInputInt.nextInt();
     }
 
-    //-- Functions --\\
+    
     private static void creerUnPersonnage()
     {
         int life, attack, type = 0;
@@ -165,7 +165,7 @@ public class Game {
         {   
             listerLesElements(armes);
             int idArme = scannerInputInt.nextInt();
-            ((Warrior)players.get(id)).setArme(armes.get(0));
+            ((Warrior)players.get(id)).setArme(armes.get(idArme));
         } 
         else if (players.get(id) instanceof Magician)
         {
