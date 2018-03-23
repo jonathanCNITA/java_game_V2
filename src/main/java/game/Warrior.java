@@ -55,7 +55,7 @@ public class Warrior extends Personnage {
      *  Puis l'assigne au warrior en question.
      */
     public void setArme(Weapon newWeapon, int index) {
-        if(index > this.arme.length - 1) 
+        if(index > this.arme.length - 1 || index < 0) 
         {
             System.out.println("Index is not available!");
         } 

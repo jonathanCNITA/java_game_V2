@@ -56,7 +56,7 @@ public class Magician extends Personnage {
      */
     public void setSort(Sort newSort, int index) 
     {
-        if(index > this.sort.length - 1) 
+        if(index > this.sort.length - 1 || index < 0) 
         {
             System.out.println("Index is not available!");
         } 
