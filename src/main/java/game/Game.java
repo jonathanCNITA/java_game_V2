@@ -18,7 +18,8 @@ public class Game {
         System.out.println("Start the game");
         generateArmes();
         generateSort();
-
+        generatePerso();
+        
         while (playGame) 
         {
             userChoice = (selectOption());
@@ -204,5 +205,11 @@ public class Game {
         sorts.add(new Sort("InstantDeath", 5));
         sorts.add(new Sort("ParalizeAuto", 10));
         sorts.add(new Sort("Eclair de feu", 18));
+    }
+
+    private static void generatePerso() 
+    {
+        players.add(new Warrior("WarMan"));
+        players.add(new Magician("MagicMan"));
     }
 }
