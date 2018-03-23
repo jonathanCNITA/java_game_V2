@@ -18,6 +18,9 @@ import java.util.ArrayList;
 public class Warrior extends Personnage {
     private Weapon arme = new Weapon();
 
+    /**
+     * CONSTRUCTEURS
+     */
     public Warrior() {
     
     }
@@ -41,14 +44,30 @@ public class Warrior extends Personnage {
         this.setArme(arme);
     }
 
+    /**
+     * setter pour arme.
+     * @param newWeapon
+     *  prend en parametre un objet de type Weapon.
+     *  Puis l'assigne au warrior en question.
+     */
     public void setArme(Weapon newWeapon) {
         this.arme = newWeapon;
     }
 
+    /**
+     * getter pour arme.
+     * 
+     * @return 
+     * retourne le nom de l'arme du Warrior
+     */
     public String getArme() {
         return this.arme.getName();
     }
 
+    /**
+     * Methode toString qui appel la methode toString de personnage 
+     * et ajoute l'arme utilisé par ce dernier.
+     */
     public String toString() {
         return "WARRIOR: \n" + super.toString() + "Arme selectionné: \n" + this.arme.toString();
     }

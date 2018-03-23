@@ -13,17 +13,17 @@ public class Game {
     private static Boolean playGame = true;
     private static int userChoice;
 
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
         System.out.println("Start the game");
         generateArmes();
         generateSort();
         generatePerso();
         
-        while (playGame) 
+        while (playGame)
         {
             userChoice = (selectOption());
-            if (userChoice == 0) 
+            if (userChoice == 0)
             {
                 System.out.println("A bientot");
                 playGame = false;
@@ -247,7 +247,7 @@ public class Game {
         sorts.add(new Sort("Eclair de feu", 18));
     }
 
-    private static void generatePerso() 
+    private static void generatePerso()
     {
         players.add(new Warrior("WarMan"));
         players.add(new Magician("MagicMan"));

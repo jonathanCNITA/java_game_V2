@@ -26,6 +26,7 @@ public abstract class Personnage
     
     /** 
      * method 'setter' qui modifie le nom du personnage 
+     * @param userName prend en parametre un nom pour le personnage.
      */
     public void setName(String userName) 
     {
@@ -34,6 +35,7 @@ public abstract class Personnage
 
     /** 
      * method 'getter' qui retourne le nom du personnage 
+     * @return retourne le nom du personnage
      */
     public String getName() {
         return this.name;
@@ -41,6 +43,8 @@ public abstract class Personnage
 
     /** 
      * method 'setter' qui modifie le fichier image 
+     * @param imageLink prend en parametre une URL 
+     * pour l'image qui illustre le personnage.
      */
     public void setImg(String imageLink) 
     {
