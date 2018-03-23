@@ -79,7 +79,7 @@ public class Game {
      * @return puis retourne le choix utilisateur sous forme d'un entier.
      */
     private static int selectAttr() {
-        System.out.println("\n0 - quitter\n1 - Nom\n2 - Image\n3 - Vie\n4 - Attaque\n5 - changer arme / sort");
+        System.out.println("\n0 - quitter\n1 - Nom\n2 - Image\n3 - Vie\n4 - Attaque\n5 - changer arme / sort\n6 - ajouter arme / sort");
         return scannerInputInt.nextInt();
     }
 
@@ -103,13 +103,13 @@ public class Game {
         life = scannerInputInt.nextInt();
         System.out.println("Choisissez votre force d'attaque:");
         attack = scannerInputInt.nextInt();
-        if (type == 1) 
+        if (type == 1)
         {
-            players.add(new Warrior(nom, img, life, attack));
+            players.add(new Warrior(nom, img, life, attack, armes.get(0)));
         }
-        else if (type == 2) 
+        else if (type == 2)
         {
-            players.add(new Magician(nom, img, life, attack));
+            players.add(new Magician(nom, img, life, attack, sorts.get(0)));
         }
     }
 
@@ -164,7 +164,11 @@ public class Game {
             } 
             else if (attr == 5) 
             {
-                donnerArmeSort(id); 
+                changerArmeSort(id);
+            } 
+            else if (attr == 6) 
+            {
+                ajouterArmeSort(id);
             } 
             else 
             {
@@ -182,31 +186,57 @@ public class Game {
         list.remove(id);
     }
 
+
+    private static void ajouterArmeSort(int id) 
+    {
+        if (players.get(id) instanceof Warrior)
+        {   
+            listerLesElements(armes);
+            System.out.println("choisissez une id d'arme");
+            int idArme = scannerInputInt.nextInt();
+            System.out.println("choisissez ou stocker l'arme (0 1 2)");
+            int indexCollection = scannerInputInt.nextInt();
+            ((Warrior)players.get(id)).setArme(armes.get(idArme), indexCollection);
+        } 
+        else if (players.get(id) instanceof Magician)
+        {
+            listerLesElements(sorts);
+            System.out.println("choisissez une id d'arme");
+            int idSort = scannerInputInt.nextInt();
+            System.out.println("choisissez ou stocker l'arme (0 1 2)");
+            int indexCollection = scannerInputInt.nextInt();
+            ((Magician)players.get(id)).setSort(sorts.get(idSort), indexCollection);
+        }
+    }
+
+    private static void changerArmeSort(int id) 
+    {
+        if (players.get(id) instanceof Warrior)
+        {   
+            System.out.println(((Warrior)players.get(id)));
+            System.out.println("choisissez nouvelle arme (0 1 2)");
+            int indexCollection = scannerInputInt.nextInt();
+            ((Warrior)players.get(id)).setWeaponIndex(indexCollection);
+        }
+        else if (players.get(id) instanceof Magician)
+        {
+            System.out.println(((Magician)players.get(id)));
+            System.out.println("choisissez nouveau sort (0 1 2)");
+            int indexCollection = scannerInputInt.nextInt();
+            ((Magician)players.get(id)).setSortIndex(indexCollection);
+        }
+    }
+
+
     /** 
-     * Permet d'affecter une arme ou sort à un personnage  
+     * Permet d'affecter une arme ou sort à un personnage
      * @param id 
-     *      Il prend en parametre l'index du personnage 
+     *      Il prend en parametre l'index du personnage
      *      En fonction de son type(Warrior/Magician)
      *      On affiche la liste des éléments disponible.
      *      On demande à l'utilisateur de donner l'index
      *      de l'arme ou sort à affecter.
      */ 
-    private static void donnerArmeSort(int id) 
-    {
-        if (players.get(id) instanceof Warrior)
-        {   
-            listerLesElements(armes);
-            int idArme = scannerInputInt.nextInt();
-            ((Warrior)players.get(id)).setArme(armes.get(idArme));
-        } 
-        else if (players.get(id) instanceof Magician)
-        {
-            listerLesElements(sorts);
-            int idSort = scannerInputInt.nextInt();
-            ((Magician)players.get(id)).setSort(sorts.get(idSort));
-        }
-    }
-
 
     private static void creerUneArme() 
     {
@@ -249,7 +279,7 @@ public class Game {
 
     private static void generatePerso()
     {
-        players.add(new Warrior("WarMan"));
-        players.add(new Magician("MagicMan"));
+        players.add(new Warrior("WarMan", armes.get(0)));
+        players.add(new Magician("MagicMan", sorts.get(0)));
     }
 }
