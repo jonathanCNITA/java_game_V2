@@ -65,18 +65,30 @@ public class Game {
 
     //-- Functions --\\
 
-    //-- Menus --\\
+    /**
+     * Menu principal qui présentes les options de bases
+     */
     private static int selectOption() {
         System.out.println("Choisissez une options:\n0 - Quitter le jeu\n1 - Creer un personnage\n2 - Lister les personnages\n3 - Editer un personnage\n4 - Creer une arme\n5 - Creer un Sort\n6 - Lister les armes\n7 - lister les sorts\n8 - Supprimer un personnage");
         return scannerInputInt.nextInt();
     }
 
+    /**
+     * Menu secondaire de la section éditer un personnage
+     * il liste les différents attribut modifiables
+     * @return puis retourne le choix utilisateur sous forme d'un entier.
+     */
     private static int selectAttr() {
         System.out.println("\n0 - quitter\n1 - Nom\n2 - Image\n3 - Vie\n4 - Attaque\n5 - changer arme / sort");
         return scannerInputInt.nextInt();
     }
 
-    
+    /**
+     * Fonction qui permet de créer un personnage (!sans arme)
+     * Les informations demandé sont: type, nom, img, life, attack
+     * En fonction du type choisi le personnage est crée et ajouté 
+     * à la liste de players.
+     */
     private static void creerUnPersonnage()
     {
         int life, attack, type = 0;
@@ -101,7 +113,14 @@ public class Game {
         }
     }
 
-
+    /**
+     * Fonction qui affiche les éléments d'une liste.(players, armes sorts...)
+     * @param listOfObject 
+     *  la fonction prend en parametre une liste de type ArrayList.
+     *  Elle affiche le la taille de la liste.
+     *  Puis affiche la fonction toString precedé de l'index.
+     *  
+     */
     private static void listerLesElements(ArrayList listOfObject) 
     {
         System.out.println("//////////////////////");
@@ -165,7 +184,7 @@ public class Game {
 
     /** 
      * Permet d'affecter une arme ou sort à un personnage  
-     * @param ex 
+     * @param id 
      *      Il prend en parametre l'index du personnage 
      *      En fonction de son type(Warrior/Magician)
      *      On affiche la liste des éléments disponible.
