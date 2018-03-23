@@ -52,7 +52,9 @@ public class Warrior extends Personnage {
      * setter pour arme.
      * @param newWeapon
      *  prend en parametre un objet de type Weapon.
-     *  Puis l'assigne au warrior en question.
+     * @param index
+     *  permet de placer l'arme dans une des 
+     *  trois case du tableau d'arme( 0 1 2 ).
      */
     public void setArme(Weapon newWeapon, int index) {
         if(index > this.arme.length - 1 || index < 0) 
@@ -63,19 +65,22 @@ public class Warrior extends Personnage {
         {
             this.arme[index] = newWeapon;
         }
-        
     }
 
     /**
-     * getter pour arme.
-     * 
+     * getter pour le tableau d'arme.
      * @return 
-     * retourne le nom de l'arme du Warrior
+     * retourne le tableau d'arme
      */
     public Weapon[] getArme() {
         return this.arme;
     }
 
+    /**
+     * @return
+     * Retourne l'index de l'arme selectionée
+     * parmis les armes à disposition du warrior.
+     */
     public int getWeaponSelectedIndex() {
         return weaponSelectedIndex;
     }
