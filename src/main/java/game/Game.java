@@ -122,7 +122,7 @@ public class Game {
         do {
             System.out.println("Quel element voulez vou modifier");
             attr = selectAttr();
-            System.out.print(" Nouvelle valeur");
+            System.out.print(" Nouvelle valeur: ");
             if (attr == 1) 
             {
                 players.get(id).setName(scannerInputStr.nextLine());
@@ -150,7 +150,15 @@ public class Game {
         } while (editMode);
     }
 
-
+    /** 
+     * Permet d'affecter une arme ou sort à un personnage  
+     * @param ex 
+     *      Il prend en parametre l'index du personnage 
+     *      En fonction de son type(Warrior/Magician)
+     *      On affiche la liste des éléments disponible.
+     *      On demande à l'utilisateur de donner l'index
+     *      de l'arme ou sort à affecter.
+     */ 
     private static void donnerArmeSort(int id) 
     {
         if (players.get(id) instanceof Warrior)

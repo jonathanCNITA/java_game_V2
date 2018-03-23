@@ -1,3 +1,17 @@
+/**
+ * Warrior est une classe qui hérite de Personnage elle defifinit les attributs 
+ * spécifique du Guerrier ici son arme (Weapon)
+ * <ul>
+ * <li>arme: Arme du personnage de type Weapon</li>
+ * </ul>
+ * 
+ * </p>
+ * ??????
+ * </p>
+ * @author jonathanCNITA
+ * @version 1
+ */
+
 package game;
 import java.util.ArrayList;
 

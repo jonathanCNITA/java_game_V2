@@ -1,3 +1,20 @@
+/**
+ * Personnage est une classe 'abstract' elle defifinit les attributs commun 
+ * des personnages du jeu :
+ * <ul>
+ * <li>name: nom du personnage</li>
+ * <li>img: lien vers l'image du personnage</li>
+ * <li>life: nombre de points de vie du personnage</li>
+ * <li>attack: Puissance d'attaque du personnage</li>
+ * </ul>
+ * 
+ * </p>
+ * 
+ * </p>
+ * @author jonathanCNITA
+ * @version 1
+ */
+
 package game;
 
 public abstract class Personnage 
@@ -54,6 +71,9 @@ public abstract class Personnage
         return this.attack;
     }
 
+    /** 
+     * method 'toString' qui retourne les valeurs des attributs. 
+     */
     public String toString() 
     {
         return "Name : " + this.name + "\n" +
